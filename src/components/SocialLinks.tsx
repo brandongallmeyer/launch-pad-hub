@@ -3,9 +3,9 @@ import { Card } from "@/components/ui/card";
 import { 
   Instagram, 
   Facebook, 
-  Phone, 
-  Globe 
+  Phone
 } from "lucide-react";
+import homesForHeroesLogo from "@/assets/homes-for-heroes-logo.png";
 
 interface SocialLink {
   icon: React.ReactNode;
@@ -39,8 +39,8 @@ const SocialLinks = () => {
       hoverColor: "hover:shadow-[0_0_20px_hsl(120_100%_40%_/_0.3)]"
     },
     {
-      icon: <Globe className="w-6 h-6" />,
-      label: "Website",
+      icon: <img src={homesForHeroesLogo} alt="Homes for Heroes" className="w-6 h-6 object-contain brightness-0" />,
+      label: "Homes for Heroes",
       url: "https://bhgmckenzierealty.com/homes-for-heroes",
       gradient: "from-accent-green to-secondary-bright",
       hoverColor: "hover:shadow-[0_0_20px_hsl(120_100%_40%_/_0.3)]"
