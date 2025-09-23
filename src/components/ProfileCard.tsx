@@ -76,10 +76,6 @@ const ProfileCard = ({
             </div>
           </div>
           
-          {/* Status Indicator */}
-          <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent-green rounded-full flex items-center justify-center shadow-neon-cyan border-2 border-background">
-            <div className="w-4 h-4 bg-background rounded-full"></div>
-          </div>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
