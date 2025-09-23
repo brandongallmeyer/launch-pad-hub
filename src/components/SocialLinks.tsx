@@ -50,7 +50,7 @@ const SocialLinks = () => {
     {
       icon: <Globe className="w-6 h-6" />,
       label: "Website",
-      url: "https://your-website.com",
+      url: "https://bhgmckenzierealty.com/homes-for-heroes",
       gradient: "from-accent-green to-primary",
       hoverColor: "hover:shadow-[0_0_20px_hsl(142_71%_45%_/_0.5)]"
     },
