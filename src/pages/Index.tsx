@@ -29,11 +29,11 @@ const Index = () => {
         {/* Main Content */}
         <div className="container mx-auto py-16 md:py-24">
           <ProfileCard 
-            name="John Doe"
+            name="Brandon Gallmeyer"
             title="Real Estate Professional & App Developer"
             bio="Passionate about helping people find their dream homes and creating innovative digital solutions. With years of experience in real estate and a passion for technology, I bridge the gap between traditional service and modern innovation."
-            phone="(555) 123-4567"
-            email="john.doe@example.com"
+            phone="3603648703"
+            email="brandon@mckenziebhg.com"
           />
           
           {/* Social Links */}
@@ -47,7 +47,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-glass opacity-30"></div>
           <div className="relative">
             <p className="text-muted-foreground mb-2">
-              © 2024 John Doe. All rights reserved.
+              © 2024 Brandon Gallmeyer. All rights reserved.
             </p>
             <p className="text-sm text-primary-bright">
               Designed for the future • Built with passion

@@ -2,7 +2,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
+import { useState } from "react";
 import profilePlaceholder from "@/assets/profile-placeholder.jpg";
+import ContactDialog from "./ContactDialog";
 
 interface ProfileCardProps {
   name?: string;
@@ -21,15 +23,10 @@ const ProfileCard = ({
   email = "your.email@example.com",
   headshotUrl = profilePlaceholder
 }: ProfileCardProps) => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+
   const handleContact = () => {
-    const contactInfo = `📞 ${phone}\n📧 ${email}`;
-    
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(contactInfo);
-      alert("Contact information copied to clipboard!");
-    } else {
-      prompt("Here's my contact information:", contactInfo);
-    }
+    setIsContactDialogOpen(true);
   };
 
   const handleHorizonApp = () => {
@@ -152,6 +149,13 @@ const ProfileCard = ({
           </div>
         </Card>
       </div>
+
+      <ContactDialog
+        isOpen={isContactDialogOpen}
+        onClose={() => setIsContactDialogOpen(false)}
+        phone={phone}
+        email={email}
+      />
     </div>
   );
 };
