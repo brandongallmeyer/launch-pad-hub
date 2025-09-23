@@ -51,10 +51,10 @@ const ProfileCard = ({
           <div className="absolute -inset-1 bg-gradient-to-r from-accent-green to-secondary-bright rounded-full opacity-20"></div>
           
           {/* Flip Container */}
-          <div className="group relative w-48 h-48 mx-auto cursor-pointer perspective-1000">
-            <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+          <div className="flip-container group relative w-48 h-48 mx-auto cursor-pointer">
+            <div className="flip-inner relative w-full h-full">
               {/* Front Side - Headshot */}
-              <div className="absolute inset-0 w-full h-full backface-hidden">
+              <div className="flip-front absolute inset-0 w-full h-full">
                 <Avatar className="w-full h-full shadow-hero border-4 border-primary-bright/30 transition-all duration-500">
                   <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
                   <AvatarFallback className="text-4xl bg-gradient-hero text-primary-foreground w-full h-full">
@@ -64,7 +64,7 @@ const ProfileCard = ({
               </div>
               
               {/* Back Side - Logo */}
-              <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
+              <div className="flip-back absolute inset-0 w-full h-full">
                 <div className="w-full h-full rounded-full bg-gradient-real-estate shadow-hero border-4 border-primary-bright/30 flex items-center justify-center p-6">
                   <img 
                     src={firmLogo} 
