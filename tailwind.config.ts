@@ -14,23 +14,35 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          bright: "hsl(var(--border-bright))",
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: {
           DEFAULT: "hsl(var(--background))",
           secondary: "hsl(var(--background-secondary))",
+          tertiary: "hsl(var(--background-tertiary))",
         },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          dark: "hsl(var(--primary-dark))",
-          light: "hsl(var(--primary-light))",
+          bright: "hsl(var(--primary-bright))",
+          glow: "hsl(var(--primary-glow))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
+          bright: "hsl(var(--secondary-bright))",
+          glow: "hsl(var(--secondary-glow))",
           foreground: "hsl(var(--secondary-foreground))",
+        },
+        accent: {
+          orange: "hsl(var(--accent-orange))",
+          pink: "hsl(var(--accent-pink))",
+          green: "hsl(var(--accent-green))",
+          blue: "hsl(var(--accent-blue))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -40,10 +52,6 @@ export default {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -51,6 +59,7 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           secondary: "hsl(var(--card-secondary))",
+          glass: "hsl(var(--card-glass))",
           foreground: "hsl(var(--card-foreground))",
         },
         sidebar: {
@@ -67,13 +76,19 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-card': 'var(--gradient-card)',
+        'gradient-glass': 'var(--gradient-glass)',
         'gradient-real-estate': 'var(--gradient-real-estate)',
         'gradient-horizon': 'var(--gradient-horizon)',
+        'gradient-background': 'var(--gradient-background)',
+        'gradient-mesh': 'var(--gradient-mesh)',
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'hero': 'var(--shadow-hero)',
         'button': 'var(--shadow-button)',
+        'neon-cyan': 'var(--shadow-neon-cyan)',
+        'neon-purple': 'var(--shadow-neon-purple)',
+        'neon-orange': 'var(--shadow-neon-orange)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',

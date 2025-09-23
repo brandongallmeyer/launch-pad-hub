@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, ExternalLink } from "lucide-react";
+import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
 import profilePlaceholder from "@/assets/profile-placeholder.jpg";
 
 interface ProfileCardProps {
@@ -38,75 +38,115 @@ const ProfileCard = ({
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
+    <div className="w-full max-w-7xl mx-auto px-4 relative">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
       {/* Hero Section with Profile */}
-      <div className="text-center mb-12">
-        <div className="relative inline-block mb-6">
-          <Avatar className="w-32 h-32 mx-auto shadow-hero border-4 border-primary/20">
+      <div className="relative z-10 text-center mb-16">
+        <div className="relative inline-block mb-8">
+          {/* Glowing Ring */}
+          <div className="absolute -inset-2 bg-gradient-hero rounded-full blur-md opacity-50 animate-pulse"></div>
+          <div className="absolute -inset-1 bg-gradient-hero rounded-full opacity-20"></div>
+          
+          <Avatar className="relative w-40 h-40 mx-auto shadow-hero border-2 border-primary-bright/30 transition-all duration-500 hover:scale-105 hover:shadow-neon-cyan">
             <AvatarImage src={headshotUrl} alt={name} className="object-cover" />
-            <AvatarFallback className="text-2xl bg-gradient-hero text-white">
+            <AvatarFallback className="text-3xl bg-gradient-hero text-primary-foreground">
               {name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-button">
-            <div className="w-3 h-3 bg-white rounded-full"></div>
+          
+          {/* Status Indicator */}
+          <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent-green rounded-full flex items-center justify-center shadow-neon-cyan border-2 border-background">
+            <div className="w-4 h-4 bg-background rounded-full"></div>
           </div>
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2 tracking-tight">
-          {name}
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
+          <span className="bg-gradient-to-r from-primary-bright via-accent-pink to-secondary-bright bg-clip-text text-transparent">
+            {name}
+          </span>
         </h1>
-        <p className="text-xl text-muted-foreground mb-6">{title}</p>
-        <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-primary-bright mb-8 font-medium">{title}</p>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           {bio}
         </p>
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
+      <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section */}
-        <Card className="group relative overflow-hidden bg-card-secondary shadow-card hover:shadow-hero transition-all duration-300 hover:-translate-y-2 border-0">
-          <div className="absolute inset-0 bg-gradient-real-estate opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-cyan transition-all duration-500 hover:-translate-y-4 hover:scale-105">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate transition-all duration-500"></div>
+          
+          {/* Content */}
           <div className="relative p-8 text-center">
-            <div className="w-16 h-16 bg-gradient-real-estate rounded-full mx-auto mb-6 flex items-center justify-center shadow-button">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
+            <div className="relative mb-8">
+              <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+              <div className="relative w-20 h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                <Building2 className="w-10 h-10 text-background" />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Real Estate Services</h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            
+            <h2 className="text-3xl font-bold mb-6 text-foreground">
+              <span className="bg-gradient-to-r from-accent-green to-primary-bright bg-clip-text text-transparent">
+                Real Estate
+              </span>
+            </h2>
+            
+            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
               Your trusted partner in finding the perfect home or investment property. 
               Personalized service with deep market knowledge and commitment to your success.
             </p>
+            
             <Button 
               onClick={handleContact}
-              className="bg-gradient-real-estate hover:bg-gradient-real-estate/90 text-white shadow-button hover:shadow-hero transition-all duration-300 hover:scale-105"
+              className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-cyan transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
             >
-              <Phone className="w-4 h-4 mr-2" />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              <Phone className="w-5 h-5 mr-3" />
               Get My Contact Info
             </Button>
           </div>
         </Card>
 
         {/* Horizon App Section */}
-        <Card className="group relative overflow-hidden bg-card-secondary shadow-card hover:shadow-hero transition-all duration-300 hover:-translate-y-2 border-0">
-          <div className="absolute inset-0 bg-gradient-horizon opacity-5 group-hover:opacity-10 transition-opacity duration-300"></div>
+        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-purple transition-all duration-500 hover:-translate-y-4 hover:scale-105">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-gradient-horizon opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon transition-all duration-500"></div>
+          
+          {/* Content */}
           <div className="relative p-8 text-center">
-            <div className="w-16 h-16 bg-gradient-horizon rounded-full mx-auto mb-6 flex items-center justify-center shadow-button">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
+            <div className="relative mb-8">
+              <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+              <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                <Zap className="w-10 h-10 text-background" />
+              </div>
             </div>
-            <h2 className="text-2xl font-bold mb-4 text-foreground">Horizon App</h2>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            
+            <h2 className="text-3xl font-bold mb-6 text-foreground">
+              <span className="bg-gradient-to-r from-secondary-bright to-accent-pink bg-clip-text text-transparent">
+                Horizon App
+              </span>
+            </h2>
+            
+            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
               Innovative mobile application designed to enhance your digital experience. 
               Cutting-edge technology meets user-friendly design for seamless interaction.
             </p>
+            
             <Button 
               onClick={handleHorizonApp}
-              className="bg-gradient-horizon hover:bg-gradient-horizon/90 text-white shadow-button hover:shadow-hero transition-all duration-300 hover:scale-105"
+              className="relative overflow-hidden bg-gradient-horizon hover:bg-gradient-horizon text-background shadow-button hover:shadow-neon-purple transition-all duration-300 hover:scale-110 border border-secondary/30 px-8 py-6 text-lg font-semibold"
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+              <ExternalLink className="w-5 h-5 mr-3" />
               Open Horizon App
             </Button>
           </div>

@@ -3,15 +3,31 @@ import SocialLinks from "@/components/SocialLinks";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background-secondary to-background">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-50" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f8fafc' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
+    <div className="min-h-screen bg-gradient-background relative overflow-hidden">
+      {/* Animated Mesh Background */}
+      <div className="absolute inset-0 bg-gradient-mesh opacity-30 animate-pulse"></div>
+      
+      {/* Floating Geometric Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 border border-primary-bright/20 rounded-full animate-pulse"></div>
+      <div className="absolute top-40 right-20 w-20 h-20 bg-secondary/10 rounded-lg rotate-45 animate-bounce"></div>
+      <div className="absolute bottom-40 left-20 w-24 h-24 border-2 border-accent-pink/20 rotate-12 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-16 h-16 bg-primary/10 rounded-full animate-bounce delay-1000"></div>
+      
+      {/* Grid Pattern Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            linear-gradient(hsl(180 100% 50% / 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(180 100% 50% / 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}
+      ></div>
       
       <div className="relative z-10">
         {/* Main Content */}
-        <div className="container mx-auto py-12 md:py-20">
+        <div className="container mx-auto py-16 md:py-24">
           <ProfileCard 
             name="John Doe"
             title="Real Estate Professional & App Developer"
@@ -21,16 +37,22 @@ const Index = () => {
           />
           
           {/* Social Links */}
-          <div className="max-w-2xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <SocialLinks />
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="relative z-10 py-8 text-center border-t border-border/50 bg-card/50 backdrop-blur-sm">
-          <p className="text-sm text-muted-foreground">
-            © 2024 John Doe. All rights reserved.
-          </p>
+        {/* Futuristic Footer */}
+        <footer className="relative z-10 py-12 text-center border-t border-border-bright/30 bg-gradient-card backdrop-blur-xl">
+          <div className="absolute inset-0 bg-gradient-glass opacity-30"></div>
+          <div className="relative">
+            <p className="text-muted-foreground mb-2">
+              © 2024 John Doe. All rights reserved.
+            </p>
+            <p className="text-sm text-primary-bright">
+              Designed for the future • Built with passion
+            </p>
+          </div>
         </footer>
       </div>
     </div>
