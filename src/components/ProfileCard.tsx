@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
 import { useState } from "react";
 import brandonHeadshot from "@/assets/brandon-headshot.jpg";
-import firmLogo from "@/assets/firm-logo.png";
+import firmLogoWhite from "@/assets/firm-logo-white.png";
 import ContactDialog from "./ContactDialog";
 
 interface ProfileCardProps {
@@ -65,9 +65,9 @@ const ProfileCard = ({
               
               {/* Back Side - Logo */}
               <div className="flip-back absolute inset-0 w-full h-full">
-                <div className="w-full h-full rounded-full bg-gradient-real-estate shadow-hero border-4 border-primary-bright/30 flex items-center justify-center p-6">
+                <div className="w-full h-full rounded-full bg-accent-green shadow-hero border-4 border-primary-bright/30 flex items-center justify-center p-8">
                   <img 
-                    src={firmLogo} 
+                    src={firmLogoWhite} 
                     alt="Better Homes and Gardens McKenzie Realty" 
                     className="w-full h-full object-contain"
                   />
