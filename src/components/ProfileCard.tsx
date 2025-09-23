@@ -46,8 +46,8 @@ const ProfileCard = ({
       <div className="relative z-10 text-center mb-16">
         <div className="relative inline-block mb-8">
           {/* Glowing Ring */}
-          <div className="absolute -inset-2 bg-gradient-hero rounded-full blur-md opacity-50 animate-pulse"></div>
-          <div className="absolute -inset-1 bg-gradient-hero rounded-full opacity-20"></div>
+          <div className="absolute -inset-2 bg-gradient-to-r from-accent-green to-secondary-bright rounded-full blur-md opacity-50 animate-pulse"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-accent-green to-secondary-bright rounded-full opacity-20"></div>
           
           <Avatar className="relative w-48 h-48 mx-auto shadow-hero border-4 border-primary-bright/30 transition-all duration-500 hover:scale-105 hover:shadow-neon-cyan">
             <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
