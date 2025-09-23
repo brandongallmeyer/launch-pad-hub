@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
 import { useState } from "react";
-import profilePlaceholder from "@/assets/profile-placeholder.jpg";
+import brandonHeadshot from "@/assets/brandon-headshot.jpg";
 import ContactDialog from "./ContactDialog";
 
 interface ProfileCardProps {
@@ -21,7 +21,7 @@ const ProfileCard = ({
   bio = "Passionate about helping people find their dream homes and creating innovative digital solutions. With years of experience in real estate and a passion for technology, I bridge the gap between traditional service and modern innovation.",
   phone = "(555) 123-4567",
   email = "your.email@example.com",
-  headshotUrl = profilePlaceholder
+  headshotUrl = brandonHeadshot
 }: ProfileCardProps) => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
@@ -49,9 +49,9 @@ const ProfileCard = ({
           <div className="absolute -inset-2 bg-gradient-hero rounded-full blur-md opacity-50 animate-pulse"></div>
           <div className="absolute -inset-1 bg-gradient-hero rounded-full opacity-20"></div>
           
-          <Avatar className="relative w-40 h-40 mx-auto shadow-hero border-2 border-primary-bright/30 transition-all duration-500 hover:scale-105 hover:shadow-neon-cyan">
-            <AvatarImage src={headshotUrl} alt={name} className="object-cover" />
-            <AvatarFallback className="text-3xl bg-gradient-hero text-primary-foreground">
+          <Avatar className="relative w-48 h-48 mx-auto shadow-hero border-4 border-primary-bright/30 transition-all duration-500 hover:scale-105 hover:shadow-neon-cyan">
+            <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
+            <AvatarFallback className="text-4xl bg-gradient-hero text-primary-foreground w-full h-full">
               {name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>
@@ -76,7 +76,7 @@ const ProfileCard = ({
       {/* Main Content Grid */}
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section */}
-        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-cyan transition-all duration-500 hover:-translate-y-4 hover:scale-105">
+        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-green transition-all duration-500 hover:-translate-y-4 hover:scale-105">
           {/* Animated Background */}
           <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
           <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate transition-all duration-500"></div>
@@ -91,7 +91,7 @@ const ProfileCard = ({
             </div>
             
             <h2 className="text-3xl font-bold mb-6 text-foreground">
-              <span className="bg-gradient-to-r from-accent-green to-primary-bright bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
                 Real Estate
               </span>
             </h2>
@@ -103,7 +103,7 @@ const ProfileCard = ({
             
             <Button 
               onClick={handleContact}
-              className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-cyan transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
+              className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               <Phone className="w-5 h-5 mr-3" />
@@ -128,7 +128,7 @@ const ProfileCard = ({
             </div>
             
             <h2 className="text-3xl font-bold mb-6 text-foreground">
-              <span className="bg-gradient-to-r from-secondary-bright to-accent-pink bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
                 Horizon App
               </span>
             </h2>

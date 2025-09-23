@@ -88,6 +88,7 @@ export default {
         'button': 'var(--shadow-button)',
         'neon-cyan': 'var(--shadow-neon-cyan)',
         'neon-purple': 'var(--shadow-neon-purple)',
+        'neon-green': 'var(--shadow-neon-green)',
         'neon-orange': 'var(--shadow-neon-orange)',
       },
       transitionTimingFunction: {
