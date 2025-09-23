@@ -35,8 +35,8 @@ const SocialLinks = () => {
     },
     {
       icon: <Twitter className="w-6 h-6" />,
-      label: "Twitter",
-      url: "https://twitter.com/yourusername", 
+      label: "Agent Contact",
+      url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
       gradient: "from-primary-bright to-accent-blue",
       hoverColor: "hover:shadow-neon-cyan"
     },
