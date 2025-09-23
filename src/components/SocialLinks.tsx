@@ -3,9 +3,7 @@ import { Card } from "@/components/ui/card";
 import { 
   Instagram, 
   Facebook, 
-  Twitter, 
-  Linkedin, 
-  Mail, 
+  Phone, 
   Globe 
 } from "lucide-react";
 
@@ -34,18 +32,11 @@ const SocialLinks = () => {
       hoverColor: "hover:shadow-[0_0_20px_hsl(200_98%_39%_/_0.5)]"
     },
     {
-      icon: <Twitter className="w-6 h-6" />,
+      icon: <Phone className="w-6 h-6" />,
       label: "Agent Contact",
       url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
       gradient: "from-primary-bright to-accent-blue",
       hoverColor: "hover:shadow-neon-cyan"
-    },
-    {
-      icon: <Linkedin className="w-6 h-6" />,
-      label: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
-      gradient: "from-accent-blue to-secondary",
-      hoverColor: "hover:shadow-neon-purple"
     },
     {
       icon: <Globe className="w-6 h-6" />,
@@ -53,13 +44,6 @@ const SocialLinks = () => {
       url: "https://bhgmckenzierealty.com/homes-for-heroes",
       gradient: "from-accent-green to-primary",
       hoverColor: "hover:shadow-[0_0_20px_hsl(142_71%_45%_/_0.5)]"
-    },
-    {
-      icon: <Mail className="w-6 h-6" />,
-      label: "Email", 
-      url: "mailto:your.email@example.com",
-      gradient: "from-accent-orange to-accent-pink",
-      hoverColor: "hover:shadow-neon-orange"
     }
   ];
 
