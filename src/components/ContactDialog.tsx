@@ -69,7 +69,7 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
                 <span className="text-lg font-semibold text-foreground">Office Phone</span>
               </div>
               
-              <div className="text-2xl font-bold text-primary-bright mb-4">
+              <div className="text-2xl font-bold text-accent-green mb-4">
                 {formatPhoneNumber(phone)}
               </div>
               
@@ -101,20 +101,20 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
             <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/10 to-secondary/10"></div>
             <div className="relative">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-horizon rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-real-estate rounded-lg flex items-center justify-center">
                   <Mail className="w-5 h-5 text-background" />
                 </div>
                 <span className="text-lg font-semibold text-foreground">Email</span>
               </div>
               
-              <div className="text-xl font-bold text-primary-bright mb-4 break-all">
+              <div className="text-xl font-bold text-accent-green mb-4 break-all">
                 {email}
               </div>
               
               <div className="flex gap-2">
                 <Button
                   onClick={handleEmail}
-                  className="flex-1 bg-gradient-horizon hover:bg-gradient-horizon text-background"
+                  className="flex-1 bg-gradient-real-estate hover:bg-gradient-real-estate text-background"
                 >
                   <Mail className="w-4 h-4 mr-2" />
                   Send Email
@@ -122,10 +122,10 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
                 <Button
                   onClick={() => copyToClipboard(email, 'email')}
                   variant="outline"
-                  className="px-3 border-border-bright hover:bg-accent-blue/10"
+                  className="px-3 border-border-bright hover:bg-accent-green/10"
                 >
                   {copiedEmail ? (
-                    <span className="text-accent-blue">✓</span>
+                    <span className="text-accent-green">✓</span>
                   ) : (
                     <Copy className="w-4 h-4" />
                   )}

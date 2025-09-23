@@ -21,29 +21,29 @@ const SocialLinks = () => {
       icon: <Instagram className="w-6 h-6" />,
       label: "Instagram",
       url: "https://www.instagram.com/brandon_gallmeyer/",
-      gradient: "from-accent-pink to-accent-orange",
-      hoverColor: "hover:shadow-[0_0_20px_hsl(330_81%_60%_/_0.5)]"
+      gradient: "from-accent-pink to-secondary-bright",
+      hoverColor: "hover:shadow-[0_0_20px_hsl(330_81%_60%_/_0.3)]"
     },
     {
       icon: <Facebook className="w-6 h-6" />,
       label: "Facebook", 
       url: "https://www.facebook.com/brandon.gallmeyer/",
-      gradient: "from-accent-blue to-primary",
-      hoverColor: "hover:shadow-[0_0_20px_hsl(200_98%_39%_/_0.5)]"
+      gradient: "from-accent-blue to-secondary-bright",
+      hoverColor: "hover:shadow-[0_0_20px_hsl(200_98%_39%_/_0.3)]"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       label: "Agent Contact",
       url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
-      gradient: "from-primary-bright to-accent-blue",
-      hoverColor: "hover:shadow-neon-cyan"
+      gradient: "from-accent-green to-secondary-bright",
+      hoverColor: "hover:shadow-[0_0_20px_hsl(120_100%_40%_/_0.3)]"
     },
     {
       icon: <Globe className="w-6 h-6" />,
       label: "Website",
       url: "https://bhgmckenzierealty.com/homes-for-heroes",
-      gradient: "from-accent-green to-primary",
-      hoverColor: "hover:shadow-[0_0_20px_hsl(142_71%_45%_/_0.5)]"
+      gradient: "from-accent-green to-secondary-bright",
+      hoverColor: "hover:shadow-[0_0_20px_hsl(120_100%_40%_/_0.3)]"
     }
   ];
 
@@ -55,12 +55,12 @@ const SocialLinks = () => {
       
       <div className="relative">
         <h3 className="text-2xl font-bold text-center mb-8">
-          <span className="bg-gradient-to-r from-primary-bright to-secondary-bright bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent-green to-secondary-bright bg-clip-text text-transparent">
             Connect With Me
           </span>
         </h3>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {socialLinks.map((link, index) => (
             <Button
               key={index}

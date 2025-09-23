@@ -67,7 +67,7 @@ const ProfileCard = ({
             {name}
           </span>
         </h1>
-        <p className="text-xl md:text-2xl text-primary-bright mb-8 font-medium">{title}</p>
+        <p className="text-xl md:text-2xl text-accent-green mb-8 font-medium">{title}</p>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
           {bio}
         </p>
@@ -76,10 +76,10 @@ const ProfileCard = ({
       {/* Main Content Grid */}
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section */}
-        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-green transition-all duration-500 hover:-translate-y-4 hover:scale-105">
+        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate/10 transition-all duration-500"></div>
           
           {/* Content */}
           <div className="relative p-8 text-center">
@@ -113,10 +113,10 @@ const ProfileCard = ({
         </Card>
 
         {/* Horizon App Section */}
-        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-neon-purple transition-all duration-500 hover:-translate-y-4 hover:scale-105">
+        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-horizon opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-horizon opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon/10 transition-all duration-500"></div>
           
           {/* Content */}
           <div className="relative p-8 text-center">
