@@ -29,7 +29,7 @@ const SocialLinks = () => {
     {
       icon: <Facebook className="w-6 h-6" />,
       label: "Facebook", 
-      url: "https://facebook.com/yourusername",
+      url: "https://www.facebook.com/brandon.gallmeyer/",
       gradient: "from-accent-blue to-primary",
       hoverColor: "hover:shadow-[0_0_20px_hsl(200_98%_39%_/_0.5)]"
     },
