@@ -63,7 +63,7 @@ const ProfileCard = ({
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
-          <span className="bg-gradient-to-r from-primary-bright via-accent-pink to-secondary-bright bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-accent-green to-secondary-bright bg-clip-text text-transparent">
             {name}
           </span>
         </h1>
