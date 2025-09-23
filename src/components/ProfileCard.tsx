@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
 import { useState } from "react";
 import brandonHeadshot from "@/assets/brandon-headshot.jpg";
+import firmLogo from "@/assets/firm-logo.png";
 import ContactDialog from "./ContactDialog";
 
 interface ProfileCardProps {
@@ -49,12 +50,31 @@ const ProfileCard = ({
           <div className="absolute -inset-2 bg-gradient-to-r from-accent-green to-secondary-bright rounded-full blur-md opacity-50 animate-pulse"></div>
           <div className="absolute -inset-1 bg-gradient-to-r from-accent-green to-secondary-bright rounded-full opacity-20"></div>
           
-          <Avatar className="relative w-48 h-48 mx-auto shadow-hero border-4 border-primary-bright/30 transition-all duration-500 hover:scale-105 hover:shadow-neon-cyan">
-            <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
-            <AvatarFallback className="text-4xl bg-gradient-hero text-primary-foreground w-full h-full">
-              {name.split(' ').map(n => n[0]).join('')}
-            </AvatarFallback>
-          </Avatar>
+          {/* Flip Container */}
+          <div className="group relative w-48 h-48 mx-auto cursor-pointer perspective-1000">
+            <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+              {/* Front Side - Headshot */}
+              <div className="absolute inset-0 w-full h-full backface-hidden">
+                <Avatar className="w-full h-full shadow-hero border-4 border-primary-bright/30 transition-all duration-500">
+                  <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
+                  <AvatarFallback className="text-4xl bg-gradient-hero text-primary-foreground w-full h-full">
+                    {name.split(' ').map(n => n[0]).join('')}
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+              
+              {/* Back Side - Logo */}
+              <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
+                <div className="w-full h-full rounded-full bg-gradient-real-estate shadow-hero border-4 border-primary-bright/30 flex items-center justify-center p-6">
+                  <img 
+                    src={firmLogo} 
+                    alt="Better Homes and Gardens McKenzie Realty" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           
           {/* Status Indicator */}
           <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-accent-green rounded-full flex items-center justify-center shadow-neon-cyan border-2 border-background">
