@@ -85,7 +85,7 @@ const ProfileCard = ({
         </h1>
         <p className="text-xl md:text-2xl text-accent-green mb-8 font-medium">{title}</p>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          {bio}
+          I'm dedicated to helping people turn their dreams of homeownership into reality while empowering real estate professionals to step into the future with confidence. Through my work in real estate, I guide clients with honesty, care, and innovation—making the process of buying or selling a home as smooth as possible.  Alongside this, I created the Horizon App, a platform designed to help agents save valuable time and unlock new levels of productivity using AI. By blending technology with real-world expertise, Horizon is more than just a tool—it's a step into the future of real estate.  At the heart of everything I do is one mission: to bring people closer to their goals and to lead the industry forward through innovation, efficiency, and vision.
         </p>
       </div>
 
