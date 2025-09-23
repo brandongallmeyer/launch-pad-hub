@@ -151,7 +151,8 @@ All colors MUST be HSL.
   position: relative;
 }
 
-.flip-container:hover .flip-inner {
+.flip-container:hover .flip-inner,
+.flip-container.flipped .flip-inner {
   transform: rotateY(180deg);
 }
 
@@ -164,4 +165,11 @@ All colors MUST be HSL.
 
 .flip-back {
   transform: rotateY(180deg);
+}
+
+/* Mobile touch support */
+@media (hover: none) {
+  .flip-container:hover .flip-inner {
+    transform: none;
+  }
 }

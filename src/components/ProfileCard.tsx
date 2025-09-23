@@ -25,6 +25,8 @@ const ProfileCard = ({
   headshotUrl = brandonHeadshot
 }: ProfileCardProps) => {
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  const [realEstateFlipped, setRealEstateFlipped] = useState(false);
+  const [horizonFlipped, setHorizonFlipped] = useState(false);
 
   const handleContact = () => {
     setIsContactDialogOpen(true);
@@ -91,79 +93,180 @@ const ProfileCard = ({
 
       {/* Main Content Grid */}
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
-        {/* Real Estate Section */}
-        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
-          {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate/10 transition-all duration-500"></div>
-          
-          {/* Content */}
-          <div className="relative p-8 text-center">
-            <div className="relative mb-8">
-              <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                <Building2 className="w-10 h-10 text-background" />
+        {/* Real Estate Section - Flip Card */}
+        <div 
+          className="flip-container group cursor-pointer"
+          onMouseEnter={() => setRealEstateFlipped(true)}
+          onMouseLeave={() => setRealEstateFlipped(false)}
+          onClick={() => setRealEstateFlipped(!realEstateFlipped)}
+        >
+          <div 
+            className={`flip-inner h-full transition-transform duration-600`} 
+            style={{ 
+              transformStyle: 'preserve-3d',
+              transform: realEstateFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+            }}
+          >
+            {/* Front Side - Real Estate Info */}
+            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-real-estate opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate/10 transition-all duration-500"></div>
+              
+              {/* Content */}
+              <div className="relative p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <div className="relative w-20 h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Building2 className="w-10 h-10 text-background" />
+                  </div>
+                </div>
+                
+                <h2 className="text-3xl font-bold mb-6 text-foreground">
+                  <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
+                    Real Estate
+                  </span>
+                </h2>
+                
+                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+                  Your trusted partner in finding the perfect home or investment property. 
+                  Personalized service with deep market knowledge and commitment to your success.
+                </p>
+                
+                <p className="text-sm text-accent-green font-medium">
+                  Hover or tap to see contact info
+                </p>
               </div>
-            </div>
-            
-            <h2 className="text-3xl font-bold mb-6 text-foreground">
-              <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
-                Real Estate
-              </span>
-            </h2>
-            
-            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-              Your trusted partner in finding the perfect home or investment property. 
-              Personalized service with deep market knowledge and commitment to your success.
-            </p>
-            
-            <Button 
-              onClick={handleContact}
-              className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              <Phone className="w-5 h-5 mr-3" />
-              Get My Contact Info
-            </Button>
-          </div>
-        </Card>
+            </Card>
 
-        {/* Horizon App Section */}
-        <Card className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]">
-          {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-horizon opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-          <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon/10 transition-all duration-500"></div>
-          
-          {/* Content */}
-          <div className="relative p-8 text-center">
-            <div className="relative mb-8">
-              <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-              <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                <Zap className="w-10 h-10 text-background" />
+            {/* Back Side - Contact Information */}
+            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-real-estate opacity-5"></div>
+              <div className="absolute inset-0 bg-gradient-glass"></div>
+              
+              {/* Content */}
+              <div className="relative p-8 text-center h-full flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-6 text-foreground">
+                  <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
+                    Contact Me
+                  </span>
+                </h3>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center justify-center gap-3 p-4 bg-gradient-glass rounded-xl border border-border-bright">
+                    <Phone className="w-5 h-5 text-accent-green" />
+                    <span className="text-foreground font-medium">{phone}</span>
+                  </div>
+                  
+                  <div className="flex items-center justify-center gap-3 p-4 bg-gradient-glass rounded-xl border border-border-bright">
+                    <Mail className="w-5 h-5 text-accent-green" />
+                    <span className="text-foreground font-medium text-sm">{email}</span>
+                  </div>
+                </div>
+                
+                <Button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleContact();
+                  }}
+                  className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <Phone className="w-5 h-5 mr-3" />
+                  Get Full Contact Info
+                </Button>
               </div>
-            </div>
-            
-            <h2 className="text-3xl font-bold mb-6 text-foreground">
-              <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
-                Horizon App
-              </span>
-            </h2>
-            
-            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-              Innovative mobile application designed to enhance your digital experience. 
-              Cutting-edge technology meets user-friendly design for seamless interaction.
-            </p>
-            
-            <Button 
-              onClick={handleHorizonApp}
-              className="relative overflow-hidden bg-gradient-horizon hover:bg-gradient-horizon text-background shadow-button hover:shadow-neon-purple transition-all duration-300 hover:scale-110 border border-secondary/30 px-8 py-6 text-lg font-semibold"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              <ExternalLink className="w-5 h-5 mr-3" />
-              Open Horizon App
-            </Button>
+            </Card>
           </div>
-        </Card>
+        </div>
+
+        {/* Horizon App Section - Flip Card */}
+        <div 
+          className="flip-container group cursor-pointer"
+          onMouseEnter={() => setHorizonFlipped(true)}
+          onMouseLeave={() => setHorizonFlipped(false)}
+          onClick={() => setHorizonFlipped(!horizonFlipped)}
+        >
+          <div 
+            className={`flip-inner h-full transition-transform duration-600`} 
+            style={{ 
+              transformStyle: 'preserve-3d',
+              transform: horizonFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+            }}
+          >
+            {/* Front Side - Horizon App Info */}
+            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{ backfaceVisibility: 'hidden' }}>
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-horizon opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon/10 transition-all duration-500"></div>
+              
+              {/* Content */}
+              <div className="relative p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
+                  <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Zap className="w-10 h-10 text-background" />
+                  </div>
+                </div>
+                
+                <h2 className="text-3xl font-bold mb-6 text-foreground">
+                  <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
+                    Horizon App
+                  </span>
+                </h2>
+                
+                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+                  Innovative mobile application designed to enhance your digital experience. 
+                  Cutting-edge technology meets user-friendly design for seamless interaction.
+                </p>
+                
+                <p className="text-sm text-secondary-bright font-medium">
+                  Hover or tap to access the app
+                </p>
+              </div>
+            </Card>
+
+            {/* Back Side - App Access */}
+            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-horizon opacity-5"></div>
+              <div className="absolute inset-0 bg-gradient-glass"></div>
+              
+              {/* Content */}
+              <div className="relative p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-8">
+                  <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-60"></div>
+                  <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Zap className="w-10 h-10 text-background" />
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-6 text-foreground">
+                  <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
+                    Ready to Experience Horizon?
+                  </span>
+                </h3>
+                
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Transform your workflow with AI-powered tools designed for the future of real estate.
+                </p>
+                
+                <Button 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleHorizonApp();
+                  }}
+                  className="relative overflow-hidden bg-gradient-horizon hover:bg-gradient-horizon text-background shadow-button hover:shadow-neon-purple transition-all duration-300 hover:scale-110 border border-secondary/30 px-8 py-6 text-lg font-semibold"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <ExternalLink className="w-5 h-5 mr-3" />
+                  Launch Horizon App
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </div>
       </div>
 
       <ContactDialog
