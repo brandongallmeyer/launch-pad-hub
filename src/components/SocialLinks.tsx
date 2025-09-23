@@ -22,7 +22,7 @@ const SocialLinks = () => {
     {
       icon: <Instagram className="w-6 h-6" />,
       label: "Instagram",
-      url: "https://instagram.com/yourusername",
+      url: "https://www.instagram.com/brandon_gallmeyer/",
       gradient: "from-accent-pink to-accent-orange",
       hoverColor: "hover:shadow-[0_0_20px_hsl(330_81%_60%_/_0.5)]"
     },
