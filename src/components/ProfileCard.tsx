@@ -147,9 +147,16 @@ const ProfileCard = ({
               
               {/* Content */}
               <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-6 md:mb-8">
+                  <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-60"></div>
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Building2 className="w-8 h-8 md:w-10 md:h-10 text-background" />
+                  </div>
+                </div>
+                
                 <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">
                   <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
-                    Contact Me
+                    Ready to Find Your Dream Home?
                   </span>
                 </h3>
                 
