@@ -95,7 +95,7 @@ const ProfileCard = ({
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section - Flip Card */}
         <div 
-          className="flip-container group cursor-pointer"
+          className="flip-container group cursor-pointer h-96"
           onMouseEnter={() => setRealEstateFlipped(true)}
           onMouseLeave={() => setRealEstateFlipped(false)}
           onClick={() => setRealEstateFlipped(!realEstateFlipped)}
@@ -183,7 +183,7 @@ const ProfileCard = ({
 
         {/* Horizon App Section - Flip Card */}
         <div 
-          className="flip-container group cursor-pointer"
+          className="flip-container group cursor-pointer h-96"
           onMouseEnter={() => setHorizonFlipped(true)}
           onMouseLeave={() => setHorizonFlipped(false)}
           onClick={() => setHorizonFlipped(!horizonFlipped)}
