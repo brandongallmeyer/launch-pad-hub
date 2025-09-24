@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { 
   Instagram, 
-  Facebook, 
-  Phone
+  Facebook
 } from "lucide-react";
 import homesForHeroesLogo from "@/assets/homes-for-heroes-logo.png";
+import firmLogoWhite from "@/assets/firm-logo-white.png";
 
 interface SocialLink {
   icon: React.ReactNode;
@@ -32,7 +32,7 @@ const SocialLinks = () => {
       hoverColor: "hover:shadow-[0_0_20px_hsl(200_98%_39%_/_0.3)]"
     },
     {
-      icon: <Phone className="w-6 h-6" />,
+      icon: <img src={firmLogoWhite} alt="Firm Logo" className="w-6 h-6 object-contain brightness-0" />,
       label: "Agent Website",
       url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
       gradient: "from-accent-green to-secondary-bright",
