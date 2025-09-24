@@ -160,17 +160,9 @@ const ProfileCard = ({
                   </span>
                 </h3>
                 
-                <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-                  <div className="flex items-center justify-center gap-3 p-3 md:p-4 bg-gradient-glass rounded-xl border border-border-bright">
-                    <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent-green" />
-                    <span className="text-foreground font-medium text-sm md:text-base">{phone}</span>
-                  </div>
-                  
-                  <div className="flex items-center justify-center gap-3 p-3 md:p-4 bg-gradient-glass rounded-xl border border-border-bright">
-                    <Mail className="w-4 h-4 md:w-5 md:h-5 text-accent-green" />
-                    <span className="text-foreground font-medium text-xs md:text-sm">{email}</span>
-                  </div>
-                </div>
+                <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
+                  Get personalized service with deep market knowledge and commitment to your success.
+                </p>
                 
                 <Button 
                   onClick={(e) => {
