@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, ExternalLink, Zap, Building2, Play } from "lucide-react";
 import { useState, useEffect } from "react";
-const brandonHeadshot = "/brandon-headshot.jpg";
-const firmLogoWhite = "/firm-logo-white.png";
+import brandonHeadshot from "@/assets/brandon-headshot.jpg";
+import firmLogoWhite from "@/assets/firm-logo-white.png";
 import ContactDialog from "./ContactDialog";
 interface ProfileCardProps {
   name?: string;
