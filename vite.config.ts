@@ -7,6 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
+    base: '/launch-pad-hub/',
     port: 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
