@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:gh": "VITE_BASE=/launch-pad-hub/ npm run build -- --mode gh",
+    "build:root": "VITE_BASE=/ npm run build -- --mode root",
     "postbuild": "rm -rf docs && cp -R dist docs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",

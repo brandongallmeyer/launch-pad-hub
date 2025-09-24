@@ -7,8 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
-
-import { HashRouter, Routes, Route } from "react-router-dom";
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>

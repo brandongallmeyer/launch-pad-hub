@@ -64,6 +64,41 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/7bf57f80-3107-47c0-915f-fdd2575bb82e) and click on Share -> Publish.
 
+## Build & Deploy Targets (Vite + GitHub Pages)
+
+Local development
+
+```sh
+npm run dev
+```
+
+Build for GitHub Pages under /launch-pad-hub
+
+```sh
+npm run build:gh
+# postbuild copies dist -> docs
+```
+
+Build for a custom domain at root (/)
+
+```sh
+npm run build:root
+# postbuild copies dist -> docs
+```
+
+Notes
+
+- The build base path is controlled by `VITE_BASE` (set by the scripts above).
+- `build:gh` sets `VITE_BASE=/launch-pad-hub/` for `brandongallmeyer.github.io/launch-pad-hub`.
+- `build:root` sets `VITE_BASE=/` for custom domains like `brandongallmeyer.com`.
+- The `docs/` folder is the GitHub Pages source and is refreshed automatically after each build via the `postbuild` script.
+
+GitHub Pages setup
+
+1) Repo Settings → Pages → Source: `main` branch, `/docs` folder.
+2) For a custom domain, add a `CNAME` file inside `docs/` with your domain name, e.g. `brandongallmeyer.com`.
+3) Point your domain DNS to GitHub Pages per GitHub’s docs (A/AAAA or CNAME record).
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
