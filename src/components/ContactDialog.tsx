@@ -2,18 +2,20 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Copy, ExternalLink } from "lucide-react";
 import { useState } from "react";
-
 interface ContactDialogProps {
   isOpen: boolean;
   onClose: () => void;
   phone: string;
   email: string;
 }
-
-const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) => {
+const ContactDialog = ({
+  isOpen,
+  onClose,
+  phone,
+  email
+}: ContactDialogProps) => {
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
-
   const formatPhoneNumber = (phone: string) => {
     const cleaned = phone.replace(/\D/g, '');
     const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
@@ -22,7 +24,6 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
     }
     return phone;
   };
-
   const copyToClipboard = async (text: string, type: 'phone' | 'email') => {
     try {
       await navigator.clipboard.writeText(text);
@@ -37,17 +38,13 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
       console.error('Failed to copy: ', err);
     }
   };
-
   const handleCall = () => {
     window.location.href = `tel:${phone}`;
   };
-
   const handleEmail = () => {
     window.location.href = `mailto:${email}`;
   };
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+  return <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-md mx-auto bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-bold">
@@ -66,7 +63,7 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
                 <div className="w-10 h-10 bg-gradient-real-estate rounded-lg flex items-center justify-center">
                   <Phone className="w-5 h-5 text-background" />
                 </div>
-                <span className="text-lg font-semibold text-foreground">Office Phone</span>
+                <span className="text-lg font-semibold text-foreground">Phone</span>
               </div>
               
               <div className="text-2xl font-bold text-accent-green mb-4">
@@ -74,23 +71,12 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
               </div>
               
               <div className="flex gap-2">
-                <Button
-                  onClick={handleCall}
-                  className="flex-1 bg-gradient-real-estate hover:bg-gradient-real-estate text-background"
-                >
+                <Button onClick={handleCall} className="flex-1 bg-gradient-real-estate hover:bg-gradient-real-estate text-background">
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </Button>
-                <Button
-                  onClick={() => copyToClipboard(phone, 'phone')}
-                  variant="outline"
-                  className="px-3 border-border-bright hover:bg-accent-green/10"
-                >
-                  {copiedPhone ? (
-                    <span className="text-accent-green">✓</span>
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
+                <Button onClick={() => copyToClipboard(phone, 'phone')} variant="outline" className="px-3 border-border-bright hover:bg-accent-green/10">
+                  {copiedPhone ? <span className="text-accent-green">✓</span> : <Copy className="w-4 h-4" />}
                 </Button>
               </div>
             </div>
@@ -112,31 +98,18 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
               </div>
               
               <div className="flex gap-2">
-                <Button
-                  onClick={handleEmail}
-                  className="flex-1 bg-gradient-real-estate hover:bg-gradient-real-estate text-background"
-                >
+                <Button onClick={handleEmail} className="flex-1 bg-gradient-real-estate hover:bg-gradient-real-estate text-background">
                   <Mail className="w-4 h-4 mr-2" />
                   Send Email
                 </Button>
-                <Button
-                  onClick={() => copyToClipboard(email, 'email')}
-                  variant="outline"
-                  className="px-3 border-border-bright hover:bg-accent-green/10"
-                >
-                  {copiedEmail ? (
-                    <span className="text-accent-green">✓</span>
-                  ) : (
-                    <Copy className="w-4 h-4" />
-                  )}
+                <Button onClick={() => copyToClipboard(email, 'email')} variant="outline" className="px-3 border-border-bright hover:bg-accent-green/10">
+                  {copiedEmail ? <span className="text-accent-green">✓</span> : <Copy className="w-4 h-4" />}
                 </Button>
               </div>
             </div>
           </div>
         </div>
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
-
 export default ContactDialog;
