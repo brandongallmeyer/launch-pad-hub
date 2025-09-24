@@ -49,7 +49,7 @@ const Index = () => {
             <p className="text-muted-foreground mb-2">
               © 2024 Brandon Gallmeyer. All rights reserved.
             </p>
-            <p className="text-sm text-primary-bright">
+            <p className="text-sm text-muted-foreground">
               Designed for the future • Built with passion
             </p>
           </div>
