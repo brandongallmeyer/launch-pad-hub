@@ -205,7 +205,7 @@ const ProfileCard = ({
                 </h3>
                 
                 <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-                  Get personalized service with deep market knowledge and commitment to your success.
+                  Don't forget to check out Homes for Heroes to see if you qualify to get 25% of my commission back to you to help give back to the heroes in the community.
                 </p>
                 
                 <Button 
