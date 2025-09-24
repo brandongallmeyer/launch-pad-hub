@@ -127,6 +127,22 @@ const ProfileCard = ({
           <div className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
             <p>{displayedBio}</p>
             {isTyping && <span className="animate-pulse">|</span>}
+            {!isTyping && (
+              <div className="flex justify-center mt-4">
+                <Button
+                  onClick={() => {
+                    setShowBio(false);
+                    setDisplayedBio("");
+                    setIsTyping(false);
+                  }}
+                  variant="ghost"
+                  size="sm"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <span className="text-2xl">−</span>
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </div>
