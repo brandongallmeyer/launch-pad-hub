@@ -189,7 +189,7 @@ const ProfileCard = ({
                 </h2>
                 
                 <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-base md:text-lg">
-                  Whether you're a first time home buyer or an experienced investor, I'm here to make the process of buying and selling real estate as fun and stress-free as possible, while also making sure you fully understand the process and what we are doing because at the end of the day this is one of the biggest purchases you can make and I want to make sure you get it right and that starts with the right agent!
+                  Whether you're a first-time buyer or experienced investor, I'm here to make buying and selling real estate fun and stress-free. I'll guide you through every step because getting it right starts with the right agent!
                 </p>
                 
                 <p className="text-xs md:text-sm text-accent-green font-medium">
