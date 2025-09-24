@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const isDev = mode === "development";
   // Allow overriding base via VITE_BASE from shell or env files
-  const base = (process.env.VITE_BASE ?? env.VITE_BASE) ?? (isDev ? "/" : "/launch-pad-hub/");
+  const base = (process.env.VITE_BASE ?? env.VITE_BASE) ?? "/";
 
   return {
     base,
