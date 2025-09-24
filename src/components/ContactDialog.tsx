@@ -51,7 +51,7 @@ const ContactDialog = ({ isOpen, onClose, phone, email }: ContactDialogProps) =>
       <DialogContent className="max-w-md mx-auto bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card">
         <DialogHeader>
           <DialogTitle className="text-center text-2xl font-bold">
-            <span className="bg-gradient-to-r from-primary-bright to-secondary-bright bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
               Contact Information
             </span>
           </DialogTitle>
