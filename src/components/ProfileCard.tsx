@@ -95,9 +95,9 @@ const ProfileCard = ({
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section - Flip Card */}
         <div 
-          className="flip-container group cursor-pointer h-96"
-          onMouseEnter={() => setRealEstateFlipped(true)}
-          onMouseLeave={() => setRealEstateFlipped(false)}
+          className="flip-container group cursor-pointer h-80 md:h-96"
+          onMouseEnter={() => window.innerWidth >= 768 && setRealEstateFlipped(true)}
+          onMouseLeave={() => window.innerWidth >= 768 && setRealEstateFlipped(false)}
           onClick={() => setRealEstateFlipped(!realEstateFlipped)}
         >
           <div 
@@ -114,26 +114,26 @@ const ProfileCard = ({
               <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-real-estate/10 transition-all duration-500"></div>
               
               {/* Content */}
-              <div className="relative p-8 text-center h-full flex flex-col justify-center">
-                <div className="relative mb-8">
+              <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  <div className="relative w-20 h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                    <Building2 className="w-10 h-10 text-background" />
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Building2 className="w-8 h-8 md:w-10 md:h-10 text-background" />
                   </div>
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-6 text-foreground">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-foreground">
                   <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
                     Real Estate
                   </span>
                 </h2>
                 
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+                <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-base md:text-lg">
                   Your trusted partner in finding the perfect home or investment property. 
                   Personalized service with deep market knowledge and commitment to your success.
                 </p>
                 
-                <p className="text-sm text-accent-green font-medium">
+                <p className="text-xs md:text-sm text-accent-green font-medium">
                   Hover or tap to see contact info
                 </p>
               </div>
@@ -146,22 +146,22 @@ const ProfileCard = ({
               <div className="absolute inset-0 bg-gradient-glass"></div>
               
               {/* Content */}
-              <div className="relative p-8 text-center h-full flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">
+              <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">
                   <span className="bg-gradient-to-r from-accent-green to-accent-green bg-clip-text text-transparent">
                     Contact Me
                   </span>
                 </h3>
                 
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center justify-center gap-3 p-4 bg-gradient-glass rounded-xl border border-border-bright">
-                    <Phone className="w-5 h-5 text-accent-green" />
-                    <span className="text-foreground font-medium">{phone}</span>
+                <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
+                  <div className="flex items-center justify-center gap-3 p-3 md:p-4 bg-gradient-glass rounded-xl border border-border-bright">
+                    <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent-green" />
+                    <span className="text-foreground font-medium text-sm md:text-base">{phone}</span>
                   </div>
                   
-                  <div className="flex items-center justify-center gap-3 p-4 bg-gradient-glass rounded-xl border border-border-bright">
-                    <Mail className="w-5 h-5 text-accent-green" />
-                    <span className="text-foreground font-medium text-sm">{email}</span>
+                  <div className="flex items-center justify-center gap-3 p-3 md:p-4 bg-gradient-glass rounded-xl border border-border-bright">
+                    <Mail className="w-4 h-4 md:w-5 md:h-5 text-accent-green" />
+                    <span className="text-foreground font-medium text-xs md:text-sm">{email}</span>
                   </div>
                 </div>
                 
@@ -170,7 +170,7 @@ const ProfileCard = ({
                     e.stopPropagation();
                     handleContact();
                   }}
-                  className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-110 border border-accent-green/30 px-8 py-6 text-lg font-semibold"
+                  className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-110 border border-accent-green/30 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg font-semibold"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-accent-green/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   <Phone className="w-5 h-5 mr-3" />
@@ -183,9 +183,9 @@ const ProfileCard = ({
 
         {/* Horizon App Section - Flip Card */}
         <div 
-          className="flip-container group cursor-pointer h-96"
-          onMouseEnter={() => setHorizonFlipped(true)}
-          onMouseLeave={() => setHorizonFlipped(false)}
+          className="flip-container group cursor-pointer h-80 md:h-96"
+          onMouseEnter={() => window.innerWidth >= 768 && setHorizonFlipped(true)}
+          onMouseLeave={() => window.innerWidth >= 768 && setHorizonFlipped(false)}
           onClick={() => setHorizonFlipped(!horizonFlipped)}
         >
           <div 
@@ -202,26 +202,26 @@ const ProfileCard = ({
               <div className="absolute inset-0 bg-gradient-glass group-hover:bg-gradient-horizon/10 transition-all duration-500"></div>
               
               {/* Content */}
-              <div className="relative p-8 text-center h-full flex flex-col justify-center">
-                <div className="relative mb-8">
+              <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                    <Zap className="w-10 h-10 text-background" />
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Zap className="w-8 h-8 md:w-10 md:h-10 text-background" />
                   </div>
                 </div>
                 
-                <h2 className="text-3xl font-bold mb-6 text-foreground">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-foreground">
                   <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
                     Horizon App
                   </span>
                 </h2>
                 
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+                <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-base md:text-lg">
                   Innovative mobile application designed to enhance your digital experience. 
                   Cutting-edge technology meets user-friendly design for seamless interaction.
                 </p>
                 
-                <p className="text-sm text-secondary-bright font-medium">
+                <p className="text-xs md:text-sm text-secondary-bright font-medium">
                   Hover or tap to access the app
                 </p>
               </div>
@@ -234,21 +234,21 @@ const ProfileCard = ({
               <div className="absolute inset-0 bg-gradient-glass"></div>
               
               {/* Content */}
-              <div className="relative p-8 text-center h-full flex flex-col justify-center">
-                <div className="relative mb-8">
+              <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
+                <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-60"></div>
-                  <div className="relative w-20 h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                    <Zap className="w-10 h-10 text-background" />
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                    <Zap className="w-8 h-8 md:w-10 md:h-10 text-background" />
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-6 text-foreground">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-foreground">
                   <span className="bg-gradient-to-r from-secondary-bright to-secondary-bright bg-clip-text text-transparent">
                     Ready to Experience Horizon?
                   </span>
                 </h3>
                 
-                <p className="text-muted-foreground mb-8 leading-relaxed">
+                <p className="text-muted-foreground mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                   Transform your workflow with AI-powered tools designed for the future of real estate.
                 </p>
                 
@@ -257,7 +257,7 @@ const ProfileCard = ({
                     e.stopPropagation();
                     handleHorizonApp();
                   }}
-                  className="relative overflow-hidden bg-gradient-horizon hover:bg-gradient-horizon text-background shadow-button hover:shadow-neon-purple transition-all duration-300 hover:scale-110 border border-secondary/30 px-8 py-6 text-lg font-semibold"
+                  className="relative overflow-hidden bg-gradient-horizon hover:bg-gradient-horizon text-background shadow-button hover:shadow-neon-purple transition-all duration-300 hover:scale-110 border border-secondary/30 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg font-semibold"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   <ExternalLink className="w-5 h-5 mr-3" />
