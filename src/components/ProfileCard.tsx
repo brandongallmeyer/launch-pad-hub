@@ -177,7 +177,7 @@ const ProfileCard = ({
                     <img 
                       src={firmLogoWhite} 
                       alt="Better Homes and Gardens McKenzie Realty" 
-                      className="w-10 h-10 md:w-12 md:h-12 object-contain"
+                      className="w-12 h-12 md:w-16 md:h-16 object-contain"
                     />
                   </div>
                 </div>
@@ -210,7 +210,11 @@ const ProfileCard = ({
                 <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-60"></div>
                   <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
-                    <Building2 className="w-8 h-8 md:w-10 md:h-10 text-background" />
+                    <img 
+                      src={firmLogoWhite} 
+                      alt="Better Homes and Gardens McKenzie Realty" 
+                      className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                    />
                   </div>
                 </div>
                 
