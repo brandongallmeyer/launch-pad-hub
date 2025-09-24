@@ -33,7 +33,7 @@ const SocialLinks = () => {
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: "Agent Contact",
+      label: "Agent Website",
       url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
       gradient: "from-accent-green to-secondary-bright",
       hoverColor: "hover:shadow-[0_0_20px_hsl(120_100%_40%_/_0.3)]"
