@@ -4,8 +4,8 @@ import {
   Instagram, 
   Facebook
 } from "lucide-react";
-import homesForHeroesLogo from "@/assets/homes-for-heroes-logo.png";
-import firmLogoWhite from "@/assets/firm-logo-white.png";
+const homesForHeroesLogo = "/homes-for-heroes-logo.png";
+const firmLogoWhite = "/firm-logo-white.png";
 
 interface SocialLink {
   icon: React.ReactNode;
