@@ -32,8 +32,8 @@ const SocialLinks = () => {
       hoverColor: "hover:shadow-[0_0_20px_hsl(270_100%_60%_/_0.3)]"
     },
     {
-      icon: <img src={firmLogoWhite} alt="Firm Logo" className="w-6 h-6 object-contain brightness-0" />,
-      label: "Agent Website",
+      icon: <img src={firmLogoWhite} alt="Firm Logo" className="w-8 h-8 object-contain brightness-0" />,
+      label: "BHG Website",
       url: "https://bhgmckenzierealty.com/directory/agents/brandon-gallmeyer", 
       gradient: "from-accent-green to-secondary-bright",
       hoverColor: "hover:shadow-[0_0_20px_hsl(120_85%_35%_/_0.3)]"
