@@ -9,14 +9,14 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Futuristic Dark Base Colors */
-    --background: 222 84% 4.9%;
-    --background-secondary: 215 28% 7%;
-    --background-tertiary: 217 33% 12%;
+    --background: 222 84% 8%;
+    --background-secondary: 215 28% 12%;
+    --background-tertiary: 217 33% 16%;
     --foreground: 210 40% 98%;
 
-    --card: 217 33% 12%;
-    --card-secondary: 215 28% 7%;
-    --card-glass: 217 33% 12% / 0.8;
+    --card: 217 33% 16%;
+    --card-secondary: 215 28% 12%;
+    --card-glass: 217 33% 16% / 0.8;
     --card-foreground: 210 40% 98%;
 
     --popover: 217 33% 12%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --primary: 177 70% 41%;
     --primary-bright: 180 100% 50%;
     --primary-glow: 180 100% 70%;
-    --primary-foreground: 222 84% 4.9%;
+    --primary-foreground: 222 84% 8%;
 
     --secondary: 270 100% 60%;
     --secondary-bright: 270 100% 60%;
@@ -51,17 +51,17 @@ All colors MUST be HSL.
 
     /* Futuristic Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(177 70% 41%), hsl(180 100% 50%));
-    --gradient-card: linear-gradient(145deg, hsl(217 33% 12% / 0.8), hsl(215 28% 7% / 0.6));
+    --gradient-card: linear-gradient(145deg, hsl(217 33% 16% / 0.8), hsl(215 28% 12% / 0.6));
     --gradient-glass: linear-gradient(145deg, hsl(210 40% 98% / 0.05), hsl(180 100% 50% / 0.02));
     --gradient-real-estate: linear-gradient(135deg, hsl(120 85% 35%), hsl(120 75% 45%));
     --gradient-horizon: linear-gradient(135deg, hsl(270 100% 60%), hsl(280 90% 70%));
-    --gradient-background: radial-gradient(ellipse at center, hsl(215 28% 7%) 0%, hsl(222 84% 4.9%) 100%);
+    --gradient-background: radial-gradient(ellipse at center, hsl(215 28% 12%) 0%, hsl(222 84% 8%) 100%);
     --gradient-mesh: conic-gradient(from 0deg at 50% 50%, hsl(180 100% 50% / 0.1), hsl(270 100% 60% / 0.1), hsl(14 100% 57% / 0.1), hsl(180 100% 50% / 0.1));
 
     /* Neon Shadows & Glows */
-    --shadow-card: 0 8px 32px hsl(215 28% 7% / 0.8), 0 4px 16px hsl(180 100% 50% / 0.1);
+    --shadow-card: 0 8px 32px hsl(215 28% 12% / 0.8), 0 4px 16px hsl(180 100% 50% / 0.1);
     --shadow-hero: 0 0 40px hsl(180 100% 50% / 0.3), 0 0 80px hsl(177 70% 41% / 0.2);
-    --shadow-button: 0 0 20px hsl(180 100% 50% / 0.4), 0 4px 15px hsl(222 84% 4.9% / 0.3);
+    --shadow-button: 0 0 20px hsl(180 100% 50% / 0.4), 0 4px 15px hsl(222 84% 8% / 0.3);
     --shadow-neon-cyan: 0 0 30px hsl(180 100% 50% / 0.5);
     --shadow-neon-purple: 0 0 30px hsl(270 100% 60% / 0.5);
     --shadow-neon-green: 0 0 30px hsl(120 85% 35% / 0.5);
