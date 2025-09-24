@@ -58,7 +58,7 @@ const ProfileCard = ({
         setIsTyping(false);
         clearInterval(typingInterval);
       }
-    }, 30);
+    }, 15);
   };
 
   return (
@@ -115,7 +115,7 @@ const ProfileCard = ({
         {!showBio && (
           <Button 
             onClick={startTypingAnimation}
-            className="relative overflow-hidden bg-gradient-hero hover:bg-gradient-hero text-primary-foreground shadow-button hover:shadow-neon-cyan transition-all duration-300 hover:scale-105 border border-primary-bright/30 px-6 py-3 mb-8 text-lg font-semibold"
+            className="relative overflow-hidden bg-gradient-real-estate hover:bg-gradient-real-estate text-background shadow-button hover:shadow-neon-green transition-all duration-300 hover:scale-105 border border-accent-green/30 px-6 py-3 mb-8 text-lg font-semibold"
           >
             <Play className="w-5 h-5 mr-2" />
             About Me
