@@ -1,8 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, ExternalLink, Zap, Building2 } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, ExternalLink, Zap, Building2, Play } from "lucide-react";
+import { useState, useEffect } from "react";
 import brandonHeadshot from "@/assets/brandon-headshot.jpg";
 import firmLogoWhite from "@/assets/firm-logo-white.png";
 import ContactDialog from "./ContactDialog";
@@ -27,6 +27,9 @@ const ProfileCard = ({
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
   const [realEstateFlipped, setRealEstateFlipped] = useState(false);
   const [horizonFlipped, setHorizonFlipped] = useState(false);
+  const [showBio, setShowBio] = useState(false);
+  const [displayedBio, setDisplayedBio] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   const handleContact = () => {
     setIsContactDialogOpen(true);
@@ -35,6 +38,27 @@ const ProfileCard = ({
   const handleHorizonApp = () => {
     // Replace with actual Horizon app URL
     window.open("https://your-horizon-app.com", "_blank");
+  };
+
+  const startTypingAnimation = () => {
+    if (isTyping || showBio) return;
+    
+    setShowBio(true);
+    setIsTyping(true);
+    setDisplayedBio("");
+    
+    const fullBio = "I'm dedicated to helping people turn their dreams of homeownership into reality while empowering real estate professionals to step into the future with confidence. Through my work in real estate, I guide clients with honesty, care, and innovation—making the process of buying or selling a home as smooth as possible. Alongside this, I created the Horizon App, a platform designed to help agents save valuable time and unlock new levels of productivity using AI. By blending technology with real-world expertise, Horizon is more than just a tool—it's a step into the future of real estate. At the heart of everything I do is one mission: to bring people closer to their goals and to lead the industry forward through innovation, efficiency, and vision.";
+    
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex < fullBio.length) {
+        setDisplayedBio(fullBio.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        setIsTyping(false);
+        clearInterval(typingInterval);
+      }
+    }, 30);
   };
 
   return (
@@ -86,9 +110,25 @@ const ProfileCard = ({
           </span>
         </h1>
         <p className="text-xl md:text-2xl text-accent-green mb-8 font-medium">{title}</p>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          I'm dedicated to helping people turn their dreams of homeownership into reality while empowering real estate professionals to step into the future with confidence. Through my work in real estate, I guide clients with honesty, care, and innovation—making the process of buying or selling a home as smooth as possible.  Alongside this, I created the Horizon App, a platform designed to help agents save valuable time and unlock new levels of productivity using AI. By blending technology with real-world expertise, Horizon is more than just a tool—it's a step into the future of real estate.  At the heart of everything I do is one mission: to bring people closer to their goals and to lead the industry forward through innovation, efficiency, and vision.
-        </p>
+        
+        {/* About Me Button */}
+        {!showBio && (
+          <Button 
+            onClick={startTypingAnimation}
+            className="relative overflow-hidden bg-gradient-hero hover:bg-gradient-hero text-primary-foreground shadow-button hover:shadow-neon-cyan transition-all duration-300 hover:scale-105 border border-primary-bright/30 px-6 py-3 mb-8 text-lg font-semibold"
+          >
+            <Play className="w-5 h-5 mr-2" />
+            About Me
+          </Button>
+        )}
+        
+        {/* Animated Bio */}
+        {showBio && (
+          <div className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+            <p>{displayedBio}</p>
+            {isTyping && <span className="animate-pulse">|</span>}
+          </div>
+        )}
       </div>
 
       {/* Main Content Grid */}
