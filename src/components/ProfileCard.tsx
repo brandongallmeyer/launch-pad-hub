@@ -71,7 +71,7 @@ const ProfileCard = ({
             <div className="flip-inner relative w-full h-full">
               {/* Front Side - Headshot */}
               <div className="flip-front absolute inset-0 w-full h-full">
-                <Avatar className="w-full h-full shadow-hero border-4 border-primary-bright/30 transition-all duration-500">
+                <Avatar className="w-full h-full shadow-hero border-4 border-accent-green/40 transition-all duration-500">
                   <AvatarImage src={headshotUrl} alt={name} className="object-cover w-full h-full" />
                   <AvatarFallback className="text-4xl bg-gradient-hero text-primary-foreground w-full h-full">
                     {name.split(' ').map(n => n[0]).join('')}
@@ -81,7 +81,7 @@ const ProfileCard = ({
               
               {/* Back Side - Logo */}
               <div className="flip-back absolute inset-0 w-full h-full">
-                <div className="w-full h-full rounded-full bg-accent-green shadow-hero border-4 border-primary-bright/30 flex items-center justify-center p-8">
+                <div className="w-full h-full rounded-full bg-accent-green shadow-hero border-4 border-secondary/40 flex items-center justify-center p-8">
                   <img src={firmLogoWhite} alt="Better Homes and Gardens McKenzie Realty" className="w-full h-full object-contain" />
                 </div>
               </div>
@@ -128,7 +128,7 @@ const ProfileCard = ({
           transform: realEstateFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
         }}>
             {/* Front Side - Real Estate Info */}
-            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{
+            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-accent-green/30 shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{
             backfaceVisibility: 'hidden'
           }}>
               {/* Animated Background */}
@@ -139,7 +139,7 @@ const ProfileCard = ({
               <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
                 <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-accent-green/30">
                     <img src={firmLogoWhite} alt="Better Homes and Gardens McKenzie Realty" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const ProfileCard = ({
             </Card>
 
             {/* Back Side - Contact Information */}
-            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card" style={{
+            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-accent-green/30 shadow-card" style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)'
           }}>
@@ -171,7 +171,7 @@ const ProfileCard = ({
               <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
                 <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-real-estate rounded-2xl blur-xl opacity-60"></div>
-                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-real-estate rounded-2xl mx-auto flex items-center justify-center shadow-button border border-accent-green/30">
                     <img src={firmLogoWhite} alt="Better Homes and Gardens McKenzie Realty" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
                   </div>
                 </div>
@@ -206,7 +206,7 @@ const ProfileCard = ({
           transform: horizonFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
         }}>
             {/* Front Side - Horizon App Info */}
-            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{
+            <Card className="flip-front absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-secondary/30 shadow-card hover:shadow-lg transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]" style={{
             backfaceVisibility: 'hidden'
           }}>
               {/* Animated Background */}
@@ -217,7 +217,7 @@ const ProfileCard = ({
               <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
                 <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-500"></div>
-                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-secondary/30">
                     <Building2 className="w-8 h-8 md:w-10 md:h-10 text-background" />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ const ProfileCard = ({
             </Card>
 
             {/* Back Side - App Access */}
-            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-border-bright shadow-card" style={{
+            <Card className="flip-back absolute inset-0 w-full h-full overflow-hidden bg-gradient-card backdrop-blur-xl border border-secondary/30 shadow-card" style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)'
           }}>
@@ -252,7 +252,7 @@ const ProfileCard = ({
               <div className="relative p-6 md:p-8 text-center h-full flex flex-col justify-center">
                 <div className="relative mb-6 md:mb-8">
                   <div className="absolute inset-0 bg-gradient-horizon rounded-2xl blur-xl opacity-60"></div>
-                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-border-bright">
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gradient-horizon rounded-2xl mx-auto flex items-center justify-center shadow-button border border-secondary/30">
                     <Building2 className="w-8 h-8 md:w-10 md:h-10 text-background" />
                   </div>
                 </div>

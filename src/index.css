@@ -46,6 +46,8 @@ All colors MUST be HSL.
 
     --border: 215 28% 17%;
     --border-bright: 180 100% 50% / 0.3;
+    --border-gradient-green: 120 85% 35% / 0.4;
+    --border-gradient-purple: 270 100% 60% / 0.4;
     --input: 215 28% 17%;
     --ring: 180 100% 50%;
 
