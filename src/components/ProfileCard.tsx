@@ -122,7 +122,7 @@ const ProfileCard = ({
       {/* Main Content Grid */}
       <div className="relative z-10 grid lg:grid-cols-2 gap-8 mb-16">
         {/* Real Estate Section - Flip Card */}
-        <div className="flip-container group cursor-pointer h-96 md:h-96" onMouseEnter={() => window.innerWidth >= 768 && setRealEstateFlipped(true)} onMouseLeave={() => window.innerWidth >= 768 && setRealEstateFlipped(false)} onClick={() => setRealEstateFlipped(!realEstateFlipped)}>
+        <div className="flip-container group cursor-pointer h-[30rem] md:h-96" onMouseEnter={() => window.innerWidth >= 768 && setRealEstateFlipped(true)} onMouseLeave={() => window.innerWidth >= 768 && setRealEstateFlipped(false)} onClick={() => setRealEstateFlipped(!realEstateFlipped)}>
           <div className={`flip-inner h-full transition-transform duration-600`} style={{
           transformStyle: 'preserve-3d',
           transform: realEstateFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
@@ -200,7 +200,7 @@ const ProfileCard = ({
         </div>
 
         {/* Horizon App Section - Flip Card */}
-        <div className="flip-container group cursor-pointer h-96 md:h-96" onMouseEnter={() => window.innerWidth >= 768 && setHorizonFlipped(true)} onMouseLeave={() => window.innerWidth >= 768 && setHorizonFlipped(false)} onClick={() => setHorizonFlipped(!horizonFlipped)}>
+        <div className="flip-container group cursor-pointer h-[30rem] md:h-96" onMouseEnter={() => window.innerWidth >= 768 && setHorizonFlipped(true)} onMouseLeave={() => window.innerWidth >= 768 && setHorizonFlipped(false)} onClick={() => setHorizonFlipped(!horizonFlipped)}>
           <div className={`flip-inner h-full transition-transform duration-600`} style={{
           transformStyle: 'preserve-3d',
           transform: horizonFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
