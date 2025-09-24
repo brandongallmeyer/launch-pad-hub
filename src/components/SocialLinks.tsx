@@ -66,7 +66,7 @@ const SocialLinks = () => {
               key={index}
               variant="ghost"
               size="sm"
-              className={`group relative overflow-hidden flex flex-col gap-3 h-auto py-6 px-4 text-muted-foreground transition-all duration-300 hover:bg-transparent border border-border hover:border-accent-green/40 ${link.hoverColor} hover:scale-110 hover:text-foreground`}
+              className={`group relative overflow-hidden flex flex-col gap-3 h-auto py-8 px-4 text-muted-foreground transition-all duration-300 hover:bg-transparent border border-border hover:border-accent-green/40 ${link.hoverColor} hover:scale-110 hover:text-foreground`}
               onClick={() => window.open(link.url, "_blank")}
             >
               {/* Gradient Background on Hover */}
