@@ -32,8 +32,7 @@ const ProfileCard = ({
     setIsContactDialogOpen(true);
   };
   const handleHorizonApp = () => {
-    // Replace with actual Horizon app URL
-    window.open("https://your-horizon-app.com", "_blank");
+    window.open("https://horizon-ai-tools.lovable.app/auth", "_blank");
   };
   const startTypingAnimation = () => {
     if (isTyping || showBio) return;
